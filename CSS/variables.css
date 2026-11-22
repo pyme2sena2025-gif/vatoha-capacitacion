@@ -1,0 +1,22 @@
+:root {
+  /* Paleta corporativa VATOHA + acentos turquesa del diseño de referencia */
+  --teal-dark: #0f5c5c;
+  --teal-deep: #0b4649;
+  --green: #29ad85;
+  --green-dark: #14795f;
+  --cyan: #38c6d9;
+  --cyan-soft: #e6f7fa;
+  --mint-soft: #eef9f6;
+  --cream: #fbfaf5;
+  --ink: #102a2e;
+  --muted: #556b6e;
+  --line: #d9e8e6;
+  --white: #ffffff;
+  --shadow: 0 16px 45px rgba(15, 92, 92, 0.10);
+  --radius: 22px;
+
+  /* Tipografías */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: 'Barlow Condensed', Impact, 'Arial Narrow', sans-serif;
+  --font-script: 'Caveat', cursive;
+}
