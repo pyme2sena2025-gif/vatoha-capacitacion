@@ -305,7 +305,7 @@ const PORTAL_CURSOS = [
         duracion: '2 horas',
         video: {
               titulo: 'Delegación y acompañamiento',
-              url: 'assets/modulo1.3.1.mp4'
+              url: 'assets/Modulo1.3.1.mp4'
             },
         temas: [
           'Beneficios de delegar y acompañar',
@@ -951,4 +951,5 @@ const PORTAL_ANEXOS = [
       'Comunicación asertiva y mediación laboral.'
     ]
   }
+
 ];
