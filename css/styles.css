@@ -601,7 +601,76 @@ a {
 }
 
 /* =========================================================
-   4. FOOTER Y RESPONSIVE GENERAL
+   4. VIDEOS (Monitor Inicio, Introducción y Justificación)
+   ========================================================= */
+.lesson-video-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0b2225;
+}
+
+.lesson-video-wrapper video {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.lesson-video-wrapper iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+.screen-content .lesson-video-wrapper {
+  margin-top: 0;
+  margin-bottom: 14px;
+  border-radius: 10px;
+}
+
+.screen-content .lesson-video-wrapper video {
+  max-height: 240px;
+}
+
+.intro-grid .intro-video-slot {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 780px;
+  margin: 12px auto 0;
+}
+
+.intro-grid .lesson-video-wrapper {
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+.intro-grid .lesson-video-wrapper video {
+  max-height: 440px;
+}
+
+.justification-video-slot {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 780px;
+  margin: 22px auto 0;
+}
+
+.justification-video-slot .lesson-video-wrapper {
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 28px rgba(15, 92, 92, 0.12);
+}
+
+.justification-video-slot .lesson-video-wrapper video {
+  max-height: 440px;
+}
+
+/* =========================================================
+   5. FOOTER Y RESPONSIVE GENERAL
    ========================================================= */
 footer {
   background: #0b2d30;
@@ -661,4 +730,3 @@ footer {
     font-size: 0.84rem;
   }
 }
-
