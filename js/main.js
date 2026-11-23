@@ -115,9 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCounters();
   }
 
-
-
- // 3. DETALLE DEL CURSO Y CANDADOS POR MÓDULO
+  // 3. DETALLE DEL CURSO Y CANDADOS POR MÓDULO
   function buildVideoPlayerHtml(videoObj, defaultTitle) {
     if (!videoObj || !videoObj.url) return '';
 
@@ -174,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const cdTitleEl = document.getElementById('cd-title');
     cdTitleEl.textContent = currentCourse.titulo;
 
-    // Crea el recuadro del video justo debajo del título y encima de Progreso
     let cdVideoBox = document.getElementById('cd-video-box');
     if (!cdVideoBox && cdTitleEl) {
       cdVideoBox = document.createElement('div');
@@ -248,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showCoursesSubView('catalog');
   });
 
-// 4. LECCIÓN DEL MÓDULO + QUIZ OBLIGATORIO
+  // 4. LECCIÓN DEL MÓDULO + QUIZ OBLIGATORIO
   function renderConceptExtras(c) {
     let html = '';
 
@@ -398,52 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-function renderModuleVideo(mod) {
-    if (!mod.video || !mod.video.url) return '';
-
-    const rawUrl = mod.video.url.trim();
-    const tituloVideo = mod.video.titulo || `Video del ${mod.numero}`;
-    let playerHtml = '';
-
-    // Detecta automáticamente si es un enlace de YouTube (normal, corto o embed)
-    const ytMatch = rawUrl.match(
-      /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
-    );
-
-    if (ytMatch && ytMatch[1]) {
-      playerHtml = `
-        <div class="lesson-video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/${ytMatch[1]}"
-            title="${tituloVideo}"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-      `;
-    } else {
-      // Si es un archivo local (ej. assets/video-modulo1.mp4)
-      playerHtml = `
-        <div class="lesson-video-wrapper">
-          <video controls preload="metadata">
-            <source src="${rawUrl}" type="video/mp4">
-            Tu navegador no soporta la reproducción de video HTML5.
-          </video>
-        </div>
-      `;
-    }
-
-    return `
-      <article class="lesson-concept-card lesson-video-card">
-        <span class="mini-pill">MATERIAL AUDIOVISUAL</span>
-        <h4>${tituloVideo}</h4>
-        ${playerHtml}
-      </article>
-    `;
-  }
-
-function openModuleLesson(modIndex) {
+  function openModuleLesson(modIndex) {
     if (!currentCourse) return;
     if (!isModuleUnlocked(currentCourse, modIndex)) return;
 
@@ -662,6 +614,104 @@ ${conceptosHtml}
     });
   });
 
+  // 7. VIDEO DENTRO DEL MONITOR DE LA VISTA INICIO
+  const HOME_MONITOR_VIDEO = {
+    titulo: 'Capacitación empresarial VATOHA',
+    url: 'assets/inicio1.mp4'
+  };
+
+  const screenContent = document.querySelector('.screen-content');
+  if (screenContent && HOME_MONITOR_VIDEO.url) {
+    screenContent.innerHTML = `
+      ${buildVideoPlayerHtml(HOME_MONITOR_VIDEO, HOME_MONITOR_VIDEO.titulo)}
+      <button type="button" class="screen-cta" id="monitor-go-cursos">
+        Ir a los cursos disponibles →
+      </button>
+    `;
+
+    document.getElementById('monitor-go-cursos')?.addEventListener('click', () => {
+      switchView('cursos');
+    });
+  }
+
+// 8. VIDEO EN LA SECCIÓN INTRODUCCIÓN ("¿DE QUÉ TRATA ESTE PROGRAMA?")
+  const INTRO_SECTION_VIDEO = {
+    titulo: 'Introducción al programa de capacitación',
+    url: 'assets/inicio2.mp4'
+  };
+
+  const introGrid = document.querySelector('.intro-grid');
+  if (introGrid && INTRO_SECTION_VIDEO.url) {
+    let introVideoBox = document.getElementById('intro-section-video');
+    if (!introVideoBox) {
+      introVideoBox = document.createElement('div');
+      introVideoBox.id = 'intro-section-video';
+      introVideoBox.className = 'intro-video-slot';
+      introGrid.appendChild(introVideoBox);
+    }
+    introVideoBox.innerHTML = buildVideoPlayerHtml(INTRO_SECTION_VIDEO, INTRO_SECTION_VIDEO.titulo);
+  }
+
+// 9. VIDEO EN LA SECCIÓN JUSTIFICACIÓN ("¿POR QUÉ ESTE PROGRAMA ES NECESARIO?")
+  const JUSTIFICACION_SECTION_VIDEO = {
+    titulo: 'Por qué es clave capacitar al equipo',
+    url: 'assets/inicio3.mp4'
+  };
+
+  const threePillars = document.querySelector('.three-pillars');
+  if (threePillars && JUSTIFICACION_SECTION_VIDEO.url) {
+    let justBox = document.getElementById('justificacion-section-video');
+    if (!justBox) {
+      justBox = document.createElement('div');
+      justBox.id = 'justificacion-section-video';
+      justBox.className = 'justification-video-slot';
+      threePillars.insertAdjacentElement('afterend', justBox);
+    }
+    justBox.innerHTML = buildVideoPlayerHtml(
+      JUSTIFICACION_SECTION_VIDEO,
+      JUSTIFICACION_SECTION_VIDEO.titulo
+    );
+  }
+  // 10. VIDEO EN LA SECCIÓN OBJETIVO ("¿QUÉ BUSCAMOS LOGRAR?")
+  const OBJETIVO_SECTION_VIDEO = {
+    titulo: 'Objetivo del programa de capacitación',
+    url: 'assets/inicio4.mp4'
+  };
+
+  const objectiveGrid = document.querySelector('.objective-grid');
+  if (objectiveGrid && OBJETIVO_SECTION_VIDEO.url) {
+    let objVideoBox = document.getElementById('objetivo-section-video');
+    if (!objVideoBox) {
+      objVideoBox = document.createElement('div');
+      objVideoBox.id = 'objetivo-section-video';
+      objVideoBox.className = 'objective-video-slot';
+      objectiveGrid.appendChild(objVideoBox);
+    }
+    objVideoBox.innerHTML = buildVideoPlayerHtml(
+      OBJETIVO_SECTION_VIDEO,
+      OBJETIVO_SECTION_VIDEO.titulo
+    );
+  }
+// 11. VIDEO EN LA SECCIÓN ALCANCE ("¿A QUIÉN VA DIRIGIDO?")
+  const ALCANCE_SECTION_VIDEO = {
+    titulo: 'Alcance del programa de capacitación',
+    url: 'assets/inicio5.mp4'
+  };
+
+  const fourCardsGrid = document.querySelector('.four-cards-grid');
+  if (fourCardsGrid && ALCANCE_SECTION_VIDEO.url) {
+    let alcanceVideoBox = document.getElementById('alcance-section-video');
+    if (!alcanceVideoBox) {
+      alcanceVideoBox = document.createElement('div');
+      alcanceVideoBox.id = 'alcance-section-video';
+      alcanceVideoBox.className = 'alcance-video-slot';
+      fourCardsGrid.insertAdjacentElement('afterend', alcanceVideoBox);
+    }
+    alcanceVideoBox.innerHTML = buildVideoPlayerHtml(
+      ALCANCE_SECTION_VIDEO,
+      ALCANCE_SECTION_VIDEO.titulo
+    );
+  }
   renderCoursesCatalog();
   renderAnexos();
 });
