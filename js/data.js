@@ -453,12 +453,20 @@ const PORTAL_CURSOS = [
     modalidad: 'e-learning',
     descripcion:
       'Fortalecer la inteligencia emocional mediante el reconocimiento y comprensión de las emociones, el manejo del estrés y la frustración, y el desarrollo de la autorregulación emocional en el entorno laboral.',
+      video: {
+              titulo: 'Inteligencia Emocional',
+              url: 'assets/modulo2.mp4'
+            },
     modulos: [
       {
         id: 'ie-m1',
         numero: 'MÓDULO 1',
         titulo: 'Reconocimiento de emociones',
         duracion: '2 horas',
+              video: {
+              titulo: 'Inteligencia Emocional',
+              url: 'assets/modulo2.1.1.mp4'
+            },
         temas: [
           'Componentes de la inteligencia emocional',
           '¿Qué son las emociones y cuáles son los tipos principales?',
@@ -475,7 +483,11 @@ const PORTAL_CURSOS = [
               'Motivación: orientar la energía emocional hacia metas, perseverancia y adaptación.',
               'Empatía: percibir y comprender las emociones, perspectivas y necesidades de otras personas.',
               'Habilidades sociales: comunicarse con claridad, resolver conflictos y construir relaciones efectivas.'
-            ]
+            ],
+              video: {
+              titulo: 'Inteligencia Emocional',
+              url: 'assets/modulo2.1.2.mp4'
+            },
           },
           {
             titulo: 'Tipos principales de emociones',
@@ -488,7 +500,11 @@ const PORTAL_CURSOS = [
               'Miedo: nos alerta ante posibles peligros o situaciones desconocidas.',
               'Sorpresa: aparece ante acontecimientos inesperados.',
               'Asco: reacción de rechazo frente a algo desagradable.'
-            ]
+            ],
+            video: {
+              titulo: 'Inteligencia Emocional',
+              url: 'assets/modulo2.1.3.mp4'
+            },
           },
           {
             titulo: '¿Cómo reconocer nuestras emociones en el trabajo?',
@@ -500,7 +516,11 @@ const PORTAL_CURSOS = [
               'Observa tus reacciones: presta atención a tus pensamientos y sensaciones físicas.',
               'Acepta tus emociones: comprende que son naturales y cumplen una función.',
               'Expresa lo que sientes: comunica tus emociones de manera adecuada y respetuosa.'
-            ]
+            ],
+            video: {
+              titulo: 'Inteligencia Emocional',
+              url: 'assets/modulo2.1.4.mp4'
+            },
           }
         ],
         actividad:
@@ -509,22 +529,54 @@ const PORTAL_CURSOS = [
           'Reconocer lo que sientes es el primer paso para responder con consciencia en lugar de reaccionar por impulso.',
         quiz: [
           {
-            pregunta: '1. ¿Por qué las emociones no se consideran "buenas" ni "malas"?',
+            pregunta: '1. ¿Qué es la inteligencia emocional?',
             opciones: [
-              'Porque no tienen ningún efecto en nuestras decisiones.',
-              'Porque son reacciones naturales y temporales que cumplen una función adaptativa.',
-              'Porque solo aparecen fuera del entorno laboral.'
+              'Evitar expresar sentimientos.',
+              'Reconocer, comprender y gestionar nuestras emociones y las de los demás.',
+              'Controlar las emociones de los compañeros.',
+              'Ignorar las situaciones difíciles.'
             ],
             correcta: 1
           },
           {
-            pregunta: '2. ¿Cuáles son los tres elementos que componen una emoción?',
+            pregunta: '2. ¿Cuál de las siguientes es una emoción básica?',
             opciones: [
-              'Respuesta física en el cuerpo, pensamiento/interpretación e impulso a la acción.',
-              'Enojo, tristeza y alegría únicamente.',
-              'Silencio, distancia y olvido.'
+              'Responsabilidad.',
+              'Disciplina.',
+              'Empatía.',
+              'Alegría.'
+            ],
+            correcta: 3
+          },
+          {
+            pregunta: '3. ¿Qué significa reconocer nuestras emociones?',
+            opciones: [
+              'Identificar lo que sentimos y comprender su origen.',
+              'Ocultar nuestros sentimientos.',
+              'Evitar hablar con los demás.',
+              'Reaccionar sin pensar.'
             ],
             correcta: 0
+          },
+          {
+            pregunta: '4. ¿Cómo podemos demostrar empatía en el trabajo?',
+            opciones: [
+              'Criticando las emociones de los demás.',
+              'Ignorando las preocupaciones.',
+              'Escuchando y comprendiendo las necesidades de los compañeros.',
+              'Imponiendo nuestras opiniones.'
+            ],
+            correcta: 2
+          },
+          {
+            pregunta: '5. ¿Por qué es importante reconocer las emociones?',
+            opciones: [
+              'Para evitar relacionarnos con otras personas.',
+              'Para mejorar el autocontrol y las relaciones laborales.',
+              'Para eliminar todas las emociones.',
+              'Para evitar asumir responsabilidades.'
+            ],
+            correcta: 1
           }
         ]
       },
@@ -951,5 +1003,4 @@ const PORTAL_ANEXOS = [
       'Comunicación asertiva y mediación laboral.'
     ]
   }
-
 ];
