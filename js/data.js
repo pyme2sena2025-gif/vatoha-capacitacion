@@ -464,7 +464,7 @@ const PORTAL_CURSOS = [
         titulo: 'Reconocimiento de emociones',
         duracion: '2 horas',
               video: {
-              titulo: 'Reconoce Tus Emociones',
+              titulo: 'Inteligencia Emocional',
               url: 'assets/modulo2.1.1.mp4'
             },
         temas: [
@@ -585,6 +585,10 @@ const PORTAL_CURSOS = [
         numero: 'MÓDULO 2',
         titulo: 'Manejo del estrés y frustración',
         duracion: '2 horas',
+        video: {
+              titulo: 'Menejo Del Estrés y Frustración',
+              url: 'assets/modulo2.2.1.mp4'
+            },
         temas: [
           'Diferencia entre estrés y frustración',
           'Herramientas para manejarlos en el ámbito laboral',
@@ -626,7 +630,11 @@ const PORTAL_CURSOS = [
                 ['Resolución de problemas', 'Analizar las dificultades y buscar alternativas para superar los obstáculos.'],
                 ['Apoyo del equipo', 'Compartir las preocupaciones y solicitar ayuda cuando sea necesario.']
               ]
-            }
+            },
+            video: {
+              titulo: 'Menejo Del Estrés y Frustración',
+              url: 'assets/modulo2.2.3.mp4'
+            },
           }
         ],
         actividad:
@@ -635,20 +643,52 @@ const PORTAL_CURSOS = [
           'Manejar el estrés no significa eliminar los retos, sino mantener la claridad para responder de forma constructiva.',
         quiz: [
           {
-            pregunta: '1. ¿Cuándo se presenta principalmente el estrés laboral?',
+            pregunta: '1. ¿Qué es el estrés laboral?',
             opciones: [
-              'Cuando sentimos que las exigencias superan los recursos o el tiempo que tenemos para afrontarlas.',
-              'Únicamente cuando finaliza una tarea con éxito.',
-              'Cuando trabajamos en equipo con buena comunicación.'
+              'Una respuesta ante situaciones de presión o sobrecarga laboral.',
+              'Una actitud de compañerismo.',
+              'Una forma de motivación.',
+              'Una herramienta de comunicación.'
             ],
             correcta: 0
           },
           {
-            pregunta: '2. ¿Qué herramienta ayuda a evitar la sobrecarga laboral priorizando actividades y tiempos?',
+            pregunta: '2. ¿Qué es la frustración?',
             opciones: [
-              'Organización del tiempo',
-              'Reacción impulsiva',
-              'Aislamiento del equipo'
+              'Una sensación de satisfacción.',
+              'Una forma de reconocimiento.',
+              'Una reacción ante obstáculos que impiden alcanzar lo esperado.',
+              'Una habilidad social.'
+            ],
+            correcta: 2
+          },
+          {
+            pregunta: '3. ¿Qué herramienta ayuda a recuperar la calma en momentos de tensión?',
+            opciones: [
+              'Discutir con los compañeros.',
+              'Respirar profundamente y realizar una pausa consciente.',
+              'Ignorar todas las responsabilidades.',
+              'Responder impulsivamente.'
+            ],
+            correcta: 1
+          },
+          {
+            pregunta: '4. Si tienes muchas actividades pendientes, ¿qué deberías hacer?',
+            opciones: [
+              'Realizar todas al mismo tiempo.',
+              'Ignorar las fechas de entrega.',
+              'Evitar solicitar ayuda.',
+              'Organizar las tareas y establecer prioridades.'
+            ],
+            correcta: 3
+          },
+          {
+            pregunta: '5. ¿Cuál es el propósito de las pausas activas?',
+            opciones: [
+              'Reducir la tensión física y mental.',
+              'Aumentar la carga laboral.',
+              'Evitar la comunicación.',
+              'Retrasar el cumplimiento de las actividades.'
             ],
             correcta: 0
           }
@@ -673,7 +713,11 @@ const PORTAL_CURSOS = [
               'Control de pensamientos: evitar que las ideas negativas dominen y cambiar el enfoque. Ejemplo: ver una crítica laboral como una oportunidad de mejora.',
               'Reconsideración emocional: reinterpretar una situación desde una perspectiva constructiva. Ejemplo: asumir una tarea fallida como aprendizaje para la próxima vez.',
               'Distanciamiento emocional: tomar unos minutos de distancia antes de responder cuando algo nos altera, evitando que el conflicto escale.'
-            ]
+            ],
+            video: {
+              titulo: 'Menejo Del Estrés y Frustración',
+              url: 'assets/modulo2.3.2.mp4'
+            },
           },
           {
             titulo: 'Pasos para manejar las emociones en el ámbito laboral',
@@ -687,7 +731,12 @@ const PORTAL_CURSOS = [
               'Buscar soluciones enfocadas en resolver la dificultad.',
               'Aprender de cada experiencia e identificar oportunidades de mejora.'
             ],
-            cita: '“Autorregularse no es esconder emociones, sino responder de manera consciente, equilibrada y respetuosa.”'
+            cita: '“Autorregularse no es esconder emociones, sino responder de manera consciente, equilibrada y respetuosa.”',
+
+            video: {
+              titulo: 'Menejo Del Estrés y Frustración',
+              url: 'assets/modulo2.3.3.mp4'
+            },
           }
         ],
         actividad:
