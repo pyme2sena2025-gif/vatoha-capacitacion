@@ -464,7 +464,7 @@ const PORTAL_CURSOS = [
         titulo: 'Reconocimiento de emociones',
         duracion: '2 horas',
               video: {
-              titulo: 'Inteligencia Emocional',
+              titulo: 'Reconoce Tus Emociones',
               url: 'assets/modulo2.1.1.mp4'
             },
         temas: [
