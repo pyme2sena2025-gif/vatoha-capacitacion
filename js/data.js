@@ -234,8 +234,12 @@ const PORTAL_CURSOS = [
               'Evaluar las consecuencias de cada alternativa.',
               'Elegir la opción más adecuada.',
               'Comunicar la decisión y hacer seguimiento.'
-            ]
-          }
+            ],
+            video: {
+              titulo: 'Video de apoyo: Toma de decisiones',
+              url: 'assets/modulo1.2.4.mp4'
+            }
+          },
         ],
         actividad:
           'Piensa en una dificultad reciente de tu área y aplica los 6 pasos para estructurar una solución responsable y medible.',
@@ -299,6 +303,10 @@ const PORTAL_CURSOS = [
         numero: 'MÓDULO 3',
         titulo: 'Delegación y acompañamiento',
         duracion: '2 horas',
+        video: {
+              titulo: 'Delegación y acompañamiento',
+              url: 'assets/modulo1.3.1.mp4'
+            },
         temas: [
           'Beneficios de delegar y acompañar',
           'Herramientas prácticas de delegación',
@@ -316,7 +324,11 @@ const PORTAL_CURSOS = [
               'Mejora el trabajo en equipo.',
               'Favorece el cumplimiento de las actividades.',
               'Promueve la autonomía y el crecimiento profesional.'
-            ]
+            ],
+            video: {
+              titulo: 'Delegación y acompañamiento',
+              url: 'assets/modulo1.3.2.mp4'
+            },
           },
           {
             titulo: 'Herramientas prácticas',
@@ -350,7 +362,11 @@ const PORTAL_CURSOS = [
                   'Realizar reuniones breves para revisar avances y apoyar ante posibles dificultades.'
                 ]
               ]
-            }
+            },
+            video: {
+              titulo: 'Delegación y acompañamiento',
+              url: 'assets/modulo1.3.3.mp4'
+            },
           },
           {
             titulo: '¿Cómo delegar correctamente?',
@@ -363,8 +379,12 @@ const PORTAL_CURSOS = [
               'Establecer tiempos y responsabilidades.',
               'Acompañar el proceso sin limitar la autonomía.',
               'Evaluar los resultados y brindar retroalimentación.'
-            ]
-          }
+            ],
+            video: {
+              titulo: 'Delegación y acompañamiento',
+              url: 'assets/modulo1.3.4.mp4'
+            }
+          },
         ],
         actividad:
           'Identifica una tarea operativa de tu rutina que puedas delegar y redacta el acuerdo claro (responsable, recursos, entregable y fecha de seguimiento).',
@@ -372,22 +392,54 @@ const PORTAL_CURSOS = [
           'Has finalizado el curso de Liderazgo y Motivación. Aprueba este quiz para habilitar tu certificado.',
         quiz: [
           {
-            pregunta: '1. ¿Bajo qué criterio se deben asignar las tareas al delegar?',
+            pregunta: '1. ¿Qué es delegar funciones?',
             opciones: [
-              'Al azar entre las personas disponibles.',
-              'De acuerdo con las habilidades, conocimientos y capacidades de cada persona.',
-              'Únicamente a las personas con mayor antigüedad.'
+              'Evitar responsabilidades.',
+              'Asignar todas las tareas a una sola persona.',
+              'Realizar personalmente todas las actividades.',
+              'Asignar responsabilidades según las capacidades de cada trabajador.'
+            ],
+            correcta: 3
+          },
+          {
+            pregunta: '2. ¿Qué debe tener en cuenta un líder al delegar una actividad?',
+            opciones: [
+              'Las habilidades y capacidades del trabajador.',
+              'Únicamente la antigüedad.',
+              'Las preferencias personales del líder.',
+              'La cantidad de personas disponibles sin considerar sus funciones.'
+            ],
+            correcta: 0
+          },
+          {
+            pregunta: '3. ¿Qué significa acompañar a un trabajador?',
+            opciones: [
+              'Vigilarlo constantemente.',
+              'Hacer todas sus actividades.',
+              'Brindar orientación, apoyo y seguimiento.',
+              'Evitar que tome decisiones.'
+            ],
+            correcta: 2
+          },
+          {
+            pregunta: '4. ¿Cuál es un beneficio de delegar correctamente?',
+            opciones: [
+              'Aumentar los conflictos.',
+              'Desarrollar habilidades y fortalecer la autonomía.',
+              'Disminuir la comunicación.',
+              'Generar dependencia del líder.'
             ],
             correcta: 1
           },
           {
-            pregunta: '2. ¿Qué implica acompañar correctamente un proceso delegado?',
+            pregunta: '5. ¿Qué debe hacer el líder al finalizar una actividad delegada?',
             opciones: [
-              'Orientar, brindar apoyo y resolver inquietudes sin limitar la autonomía del trabajador.',
-              'Hacer el trabajo por el compañero si tiene alguna duda.',
-              'Desentenderse por completo hasta el día de la entrega final.'
+              'Ignorar los resultados.',
+              'Asignar otra tarea inmediatamente.',
+              'Evitar comentarios sobre el trabajo.',
+              'Evaluar los resultados y brindar retroalimentación.'
             ],
-            correcta: 0
+            correcta: 3
           }
         ]
       }

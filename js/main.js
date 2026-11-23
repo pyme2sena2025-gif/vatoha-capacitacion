@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showCoursesSubView('catalog');
   });
 
-  // 4. LECCIÓN DEL MÓDULO + QUIZ OBLIGATORIO
+// 4. LECCIÓN DEL MÓDULO + QUIZ OBLIGATORIO
   function renderConceptExtras(c) {
     let html = '';
 
@@ -275,6 +275,10 @@ document.addEventListener('DOMContentLoaded', () => {
           </table>
         </div>
       `;
+    }
+
+    if (c.video && c.video.url) {
+      html += buildVideoPlayerHtml(c.video, c.titulo);
     }
 
     return html;
@@ -461,7 +465,6 @@ function openModuleLesson(modIndex) {
             <h4>${c.titulo}</h4>
             <p>${c.texto}</p>
             ${renderConceptExtras(c)}
-            ${c.video ? buildVideoPlayerHtml(c.video, c.titulo) : ''}
             ${c.cita ? `<blockquote class="lesson-quote">${c.cita}</blockquote>` : ''}
           </article>
         `
