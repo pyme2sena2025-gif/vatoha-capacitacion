@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/modules.css">
 </head>
 <body>
-  <!-- HEADER CON BOTONES TIPO PÍLDORA -->
+  <!-- HEADER CON BOTONES TIPO PÍLDORA Y SESIÓN ACTIVA -->
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#inicio" data-nav="inicio" aria-label="VATOHA Ingeniería, inicio">
@@ -31,6 +31,23 @@
         <button type="button" class="pill-btn" data-nav="anexos">Anexos</button>
       </nav>
     </div>
+
+    <!-- Barra identificadora del participante activo -->
+    <div class="participant-session-bar" id="participant-session-bar" hidden>
+      <div class="container session-bar-inner">
+        <div class="session-user-info">
+          <span class="session-dot" aria-hidden="true"></span>
+          <span>Participante: <strong id="session-user-name">-</strong></span>
+          <span class="session-sep">|</span>
+          <span>C.C. <strong id="session-user-cc">-</strong></span>
+          <span class="session-sep" id="session-course-sep" hidden>|</span>
+          <span id="session-course-wrap" hidden>Curso: <strong id="session-course-name">-</strong></span>
+        </div>
+        <button type="button" class="session-logout-btn" id="btn-logout-participant">
+          Cerrar sesión 🚪
+        </button>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -38,7 +55,6 @@
          VISTA 1: INICIO
          ========================================================= -->
     <section class="portal-view active" id="view-inicio">
-      <!-- Hero Principal -->
       <div class="hero-ref">
         <div class="container hero-ref-inner">
           <div class="hero-ref-heading">
@@ -60,7 +76,6 @@
               </div>
             </div>
 
-            <!-- Marco visual estilo pantalla -->
             <div class="hero-screen-frame" aria-label="Equipo de capacitación VATOHA">
               <div class="screen-bezel">
                 <div class="screen-content">
@@ -105,24 +120,24 @@
           <div class="intro-grid">
             <div class="intro-card">
               <p>
-                El programa de capacitación de <strong>VATOHA INGENIERÍA S.A.S.</strong>  está orientado al desarrollo organizacional mediante la formación continua del talento humano, promoviendo competencias que contribuyan al mejoramiento del desempeño, la productividad, el clima laboral y la eficiencia de los procesos.
+                En <strong>VATOHA INGENIERÍA S.A.S.</strong> reconocemos que la calidad de nuestros servicios integrales no depende únicamente de los procedimientos técnicos, sino de las personas que los ejecutan. Por ello, hemos diseñado un programa de capacitación enfocado en fortalecer tanto las <strong>competencias técnicas</strong> como las <strong>habilidades humanas</strong>: seguridad laboral, estandarización de procesos, comunicación asertiva y trabajo colaborativo.
               </p>
             </div>
 
             <div class="intro-bullets">
               <p>Estas dimensiones son interdependientes y, cuando se fortalecen, impactan directamente:</p>
               <ul>
-                <li>MEJOR DESEMPEÑO LABORAL.</li>
-                <li>CLIMA ORGANIZACIONAL POSITIVO.</li>
-                <li>BIENESTAR Y SEGURIDAD.</li>
+                <li>LA CALIDAD DEL SERVICIO Y LA OPERACIÓN.</li>
+                <li>EL TRABAJO EN EQUIPO Y LA PREVENCIÓN.</li>
+                <li>EL BIENESTAR INTEGRAL DEL PERSONAL.</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
 
-<!-- Sección: JUSTIFICACIÓN -->
-      <div class="section-light">
+      <!-- Sección: JUSTIFICACIÓN -->
+      <div class="section-light" id="justificacion">
         <div class="container">
           <div class="just-top">
             <div>
@@ -158,7 +173,7 @@
       </div>
 
       <!-- Banda 2: OBJETIVO -->
-      <div class="brand-band compact">
+      <div class="brand-band compact" id="objetivo">
         <div class="container objective-grid">
           <div>
             <span class="band-eyebrow">OBJETIVO</span>
@@ -167,13 +182,13 @@
             </h2>
           </div>
           <p class="objective-text">
-            <strong>Promover el desarrollo de competencias y habilidades</strong> del talento humano de VATOHA INGENIERÍA S.A.S., mediante programas de capacitación orientados al mejoramiento del desempeño laboral, el clima organizacional y la productividad empresarial.
+            <strong>Fortalecer las competencias técnicas y humanas</strong> del personal de VATOHA Ingeniería S.A.S. y sus empresas aliadas mediante un programa de capacitación estructurado, práctico y certificable.
           </p>
         </div>
       </div>
 
       <!-- Sección: ALCANCE Y POR QUÉ CAPACITAR -->
-      <div class="section-light">
+      <div class="section-light" id="alcance">
         <div class="container">
           <div class="center-heading">
             <span class="section-tag">ALCANCE</span>
@@ -186,29 +201,27 @@
           <div class="four-cards-grid">
             <article class="benefit-tile">
               <div class="tile-icon">🎓</div>
-              <h3>Para todo el equipo</h3>
-              <p>Programa dirigido a todos el personal sin distincion de cargo o area.</p>
-              <img src="assets/todoequipo.jpg"  width="300" height="200">
+              <h3>Personal certificado</h3>
+              <p>Trabajadores capacitados en protocolos vigentes, reduciendo errores y aumentando la eficiencia operativa.</p>
             </article>
 
             <article class="benefit-tile">
               <div class="tile-icon">🤝</div>
-              <h3>E-learming</h3>
-              <p>Cada capacitacion puede tomarce de manera independiente y en cualquier orden.</p>
-              <img src="assets/virtual.jpg" width="300" height="200">
+              <h3>Trato humano</h3>
+              <p>Entendemos que nuestra forma de comunicarnos impacta directamente el clima laboral y el bienestar.</p>
             </article>
 
             <article class="benefit-tile">
               <div class="tile-icon">⭐</div>
-              <h3>Certificacion</h3>
-              <p>Al finalizar cada programa, los participantes recibirán un certificado.</p>
-              <img src="assets/certificacion.jpg"  width="300" height="200">
+              <h3>Servicio al cliente</h3>
+              <p>En proyectos de ingeniería y servicios, la calidad del acompañamiento fortalece cada relación.</p>
             </article>
+          </div>
 
           <div class="home-cta-strip">
             <div>
               <h3>¿Listo para iniciar tu ruta de aprendizaje?</h3>
-              <p>Explora los cursos disponibles, descarga los materiales de apoyo y obtén tu certificado.</p>
+              <p>Regístrate con tu cédula, presenta las evaluaciones y descarga tu certificado oficial en PDF.</p>
             </div>
             <div class="home-cta-actions">
               <button type="button" class="cta-solid-btn" data-nav="cursos">Explorar Cursos →</button>
@@ -220,7 +233,7 @@
     </section>
 
     <!-- =========================================================
-         VISTA 2: CURSOS (CATÁLOGO -> DETALLE CURSO -> MÓDULO)
+         VISTA 2: CURSOS (CATÁLOGO -> REGISTRO -> DETALLE -> MÓDULO)
          ========================================================= -->
     <section class="portal-view" id="view-cursos" hidden>
       <!-- SUB-VISTA A: Catálogo de Capacitaciones -->
@@ -232,26 +245,28 @@
               <h1 class="display-title">
                 EXPLORA LOS <span class="title-highlight">MÓDULOS<em class="script-overlay">módulos</em></span>
               </h1>
-              <video width="640" height="360" controls>
-                <source src="assets/cursos.mp4" type="video/mp4">
-              </video>
               <p class="courses-lead">
-                <strong>Selecciona</strong> una capacitación y haz clic en <strong>cada módulo</strong> para ver su contenido, material de apoyo y actividades prácticas.
+                <strong>Selecciona</strong> una capacitación para registrarte con tu número de cédula o recuperar tu progreso guardado.
               </p>
+              <div style="margin-top: 16px;">
+                <button type="button" class="cta-solid-btn" id="btn-open-register-direct">
+                  Ingresar / Continuar con mi Cédula 🪪
+                </button>
+              </div>
             </div>
 
             <div class="courses-hero-card">
               <div class="mini-stat-row">
                 <div>
-                  <strong id="total-courses-count">5</strong>
+                  <strong id="total-courses-count">3</strong>
                   <span>Programas activos</span>
                 </div>
                 <div>
                   <strong id="total-completed-count">0</strong>
-                  <span>Módulos completados</span>
+                  <span>Módulos aprobados</span>
                 </div>
               </div>
-              <p>Avanza a tu ritmo y descarga tu certificado al finalizar cada programa.</p>
+              <p>Nota mínima de aprobación por módulo: <strong>3.0 / 5.0</strong>. Tu progreso queda guardado en la nube.</p>
             </div>
           </div>
         </div>
@@ -267,7 +282,7 @@
             <div class="modality-compare-grid">
               <article class="modality-card">
                 <span class="modality-pill elearning">e-learning</span>
-                <p>Accede desde cualquier dispositivo, cuando quieras. Sin horario fijo, con lecturas guiadas, material descargable y actividades por módulo.</p>
+                <p>Accede desde cualquier dispositivo, cuando quieras. Tu avance, notas y certificados quedan vinculados a tu número de cédula.</p>
               </article>
 
               <article class="modality-card">
@@ -297,13 +312,12 @@
 
           <div class="course-detail-layout">
             <div>
-              <!-- Dos tarjetas de modalidad y certificación -->
               <div class="course-info-badges">
                 <div class="info-badge-card">
                   <div class="info-badge-icon">💻</div>
                   <div>
                     <strong id="cd-mod-title">Modalidad 100% virtual</strong>
-                    <p id="cd-mod-desc">El contenido está disponible las 24 horas del día para que puedas estudiar en tu propio horario.</p>
+                    <p id="cd-mod-desc">Aprueba cada evaluación con nota mínima de 3.0 / 5.0 para desbloquear el siguiente módulo.</p>
                   </div>
                 </div>
 
@@ -311,7 +325,7 @@
                   <div class="info-badge-icon">🏅</div>
                   <div>
                     <strong>Curso certificado</strong>
-                    <p>Al finalizar el curso y completar los pasos de cierre recibirás tu certificado de reconocimiento.</p>
+                    <p>Al aprobar todos los módulos podrás descargar tu certificado oficial en PDF con código único.</p>
                   </div>
                 </div>
               </div>
@@ -327,15 +341,21 @@
               <p id="cd-description">Descripción del curso.</p>
               <div class="summary-checklist">
                 <div>✓ Material de apoyo descargable</div>
-                <div>✓ Actividades prácticas aplicadas</div>
-                <div>✓ Evaluación y certificado digital</div>
+                <div>✓ Evaluación automática (escala 1.0 a 5.0)</div>
+                <div>✓ Avance sincronizado en la nube</div>
+                <div>✓ Certificado PDF verificable</div>
+              </div>
+              <div id="cd-certificate-shortcut" style="margin-top: 18px;" hidden>
+                <button type="button" class="complete-module-btn is-done" style="width:100%;" data-step-modal="certificado">
+                  Descargar Certificado PDF 🎖️
+                </button>
               </div>
             </aside>
           </div>
         </div>
       </div>
 
-      <!-- SUB-VISTA C: Contenido del Módulo, Material, Actividad y Cierre -->
+      <!-- SUB-VISTA C: Contenido del Módulo, Material, Evaluación y Cierre -->
       <div id="module-lesson-view" hidden>
         <div class="container view-padded">
           <button type="button" class="back-link-btn" id="back-to-course">← Volver al temario del curso</button>
@@ -350,7 +370,7 @@
             <div class="module-banner-card">
               <span class="mini-pill" id="ml-duration">2 horas</span>
               <h3 id="ml-title">Título del módulo</h3>
-              <button type="button" class="download-sheet-btn" id="ml-download-btn">Descargar ficha en PDF / HTML ↓</button>
+              <button type="button" class="download-sheet-btn" id="ml-download-btn">Descargar ficha de estudio ↓</button>
             </div>
           </div>
 
@@ -366,7 +386,7 @@
             <div class="activity-body" id="ml-activity"></div>
           </div>
 
-<!-- Conclusión -->
+          <!-- Conclusión -->
           <div class="conclusion-box">
             <div>
               <span class="script-title-sm">Conclusión</span>
@@ -374,39 +394,33 @@
             </div>
           </div>
 
-          <!-- QUIZ OBLIGATORIO DEL MÓDULO -->
+          <!-- EVALUACIÓN AUTOMÁTICA OBLIGATORIA (Escala 1.0 a 5.0) -->
           <div class="module-quiz-card" id="ml-quiz-container"></div>
 
-          <!-- SIGUE ESTOS PASOS (4 pasos interactivos del video) -->
-          <div class="final-steps-section">
+          <!-- SIGUE ESTOS PASOS (Se habilita al aprobar todos los módulos del curso) -->
+          <div class="final-steps-section" id="final-steps-section">
             <h3 class="display-title center">SIGUE ESTOS PASOS</h3>
-            <div class="four-steps-grid">
-              <button type="button" class="step-action-card" data-step-modal="evaluacion">
-                <span class="step-big-num">1.</span>
-                <div class="step-icon">📋</div>
-                <span class="step-click-hint">Haga click 👆</span>
-                <strong>EVALUACIÓN DE CONOCIMIENTOS</strong>
-              </button>
-
+            <p class="center steps-lock-note" id="steps-lock-note"></p>
+            <div class="four-steps-grid" id="four-steps-grid">
               <button type="button" class="step-action-card" data-step-modal="encuesta">
-                <span class="step-big-num">2.</span>
+                <span class="step-big-num">1.</span>
                 <div class="step-icon">😊</div>
                 <span class="step-click-hint">Haga click 👆</span>
                 <strong>ENCUESTA DE SATISFACCIÓN</strong>
               </button>
 
-              <button type="button" class="step-action-card" data-step-modal="asistencia">
-                <span class="step-big-num">3.</span>
-                <div class="step-icon">📝</div>
+              <button type="button" class="step-action-card" data-step-modal="resumen">
+                <span class="step-big-num">2.</span>
+                <div class="step-icon">📊</div>
                 <span class="step-click-hint">Haga click 👆</span>
-                <strong>LISTADO DE ASISTENCIA</strong>
+                <strong>RESUMEN DE NOTAS Y AVANCE</strong>
               </button>
 
               <button type="button" class="step-action-card" data-step-modal="certificado">
-                <span class="step-big-num">4.</span>
+                <span class="step-big-num">3.</span>
                 <div class="step-icon">🎖️</div>
                 <span class="step-click-hint">Haga click 👆</span>
-                <strong>CERTIFICADO DE CAPACITACIÓN</strong>
+                <strong>CERTIFICADO DE CAPACITACIÓN PDF</strong>
               </button>
             </div>
           </div>
@@ -415,8 +429,8 @@
         <!-- Banner de Felicitaciones -->
         <div class="congrats-band">
           <div class="container center">
-            <p class="congrats-sub">HAZ FINALIZADO EL MÓDULO Y LA RUTA DEL CURSO</p>
-            <h2 class="display-title light">¡FELICITACIONES!</h2>
+            <p class="congrats-sub">COMPLETA LOS MÓDULOS CON NOTA MÍNIMA DE 3.0</p>
+            <h2 class="display-title light">¡ÉXITOS EN TU FORMACIÓN!</h2>
           </div>
         </div>
       </div>
@@ -438,9 +452,9 @@
 
       <div class="congrats-band">
         <div class="container center">
-          <h2 class="display-title light">CERTIFICACIONES</h2>
-          <button type="button" class="cert-banner-btn" data-step-modal="certificado">
-            Generar o validar certificado • Haga click 👆
+          <h2 class="display-title light">VERIFICACIÓN DE CERTIFICADOS</h2>
+          <button type="button" class="cert-banner-btn" id="btn-verify-certificate">
+            Validar certificado por código o cédula • Haga click 👆
           </button>
         </div>
       </div>
@@ -454,12 +468,15 @@
         <div class="footer-brand">VATOHA <span>INGENIERÍA S.A.S.</span></div>
         <span class="footer-nit">NIT 901.479.098-6 • Formación y Desarrollo Empresarial</span>
       </div>
-      <div>© <span id="year"></span> VATOHA Ingeniería S.A.S. Todos los derechos reservados.</div>
+      <div>
+        © <span id="year"></span> VATOHA Ingeniería S.A.S. Todos los derechos reservados. •
+        <a href="admin.html" class="back-top">Acceso Administrativo 🔒</a>
+      </div>
       <a class="back-top" href="#inicio" data-nav="inicio">Volver al inicio ↑</a>
     </div>
   </footer>
 
-  <!-- MODAL INTERACTIVO (Anexos, Evaluación, Encuesta, Asistencia, Certificado) -->
+  <!-- MODAL INTERACTIVO -->
   <div class="portal-modal" id="portal-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="portal-modal-backdrop" id="modal-backdrop"></div>
     <div class="portal-modal-card">
@@ -471,6 +488,12 @@
     </div>
   </div>
 
+  <!-- Librerías externas (Supabase JS v2 + jsPDF para certificados PDF) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+
+  <!-- Scripts de la aplicación -->
+  <script src="js/supabase-config.js"></script>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel Administrativo | VATOHA Ingeniería S.A.S.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/modules.css">
+  <style>
+    .admin-login-wrap {
+      min-height: calc(100vh - 160px);
+      display: grid;
+      place-items: center;
+      padding: 40px 20px;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+    }
+    .admin-login-card {
+      width: min(440px, 100%);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow);
+    }
+    .admin-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin: 26px 0;
+    }
+    .admin-kpi-card {
+      background: var(--mint-soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 16px;
+    }
+    .admin-kpi-card span {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .admin-kpi-card strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--teal-dark);
+      line-height: 1.1;
+      margin-top: 4px;
+    }
+    .admin-toolbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      background: var(--cream);
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+    }
+    .admin-filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+    .admin-filters input,
+    .admin-filters select {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      min-width: 190px;
+    }
+    .admin-table td {
+      font-weight: 400 !important;
+      color: var(--ink) !important;
+      min-width: auto !important;
+      font-size: 0.85rem;
+    }
+    .grade-chip {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      margin: 2px 2px 2px 0;
+    }
+    .grade-chip.pass { background: #dcfce7; color: #166534; }
+    .grade-chip.fail { background: #fee2e2; color: #991b1b; }
+    .grade-chip.none { background: #f3f4f6; color: #6b7280; }
+    @media (max-width: 960px) {
+      .admin-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .admin-kpi-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Volver al portal de capacitación">
+        <img src="assets/logo-vatoha.png" alt="VATOHA Ingeniería S.A.S." onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
+        <span class="brand-fallback" style="display:none;">
+          <span class="brand-mark">V</span>
+          <span><strong>VATOHA</strong><small>INGENIERÍA S.A.S.</small></span>
+        </span>
+      </a>
+
+      <nav class="pill-nav">
+        <a href="index.html" class="pill-btn">← Volver al Portal</a>
+        <button type="button" class="pill-btn active" id="admin-logout-btn" hidden>Cerrar sesión Admin 🚪</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- PANTALLA DE LOGIN ADMINISTRATIVO -->
+    <section class="admin-login-wrap" id="admin-login-section">
+      <div class="admin-login-card">
+        <span class="section-tag">ACCESO RESTRINGIDO</span>
+        <h1 class="display-title" style="font-size:2.3rem;">PANEL ADMINISTRATIVO</h1>
+        <p style="color:var(--muted);font-size:0.92rem;margin-top:0;">
+          Ingresa con las credenciales de administrador de <strong>VATOHA Ingeniería S.A.S.</strong>
+        </p>
+
+        <form id="admin-login-form">
+          <div class="modal-field">
+            <label for="admin-email">Correo administrativo</label>
+            <input type="email" id="admin-email" placeholder="capacitacion@vatoha.com" required>
+          </div>
+          <div class="modal-field">
+            <label for="admin-password">Contraseña</label>
+            <input type="password" id="admin-password" placeholder="••••••••" required>
+          </div>
+          <p id="admin-login-error" class="quiz-result-msg error" style="margin-bottom:12px;" hidden></p>
+          <button type="submit" class="complete-module-btn" id="btn-admin-login" style="width:100%;">
+            Iniciar sesión administrativa →
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- DASHBOARD ADMINISTRATIVO -->
+    <section class="container view-padded" id="admin-dashboard-section" hidden>
+      <div class="course-detail-header" style="margin-bottom:10px;">
+        <div>
+          <span class="section-tag">GESTIÓN DE TALENTO HUMANO Y SST</span>
+          <h1 class="display-title" style="font-size:2.6rem;">CONTROL DE CAPACITACIÓN</h1>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button type="button" class="pill-btn" id="btn-refresh-admin">Actualizar datos ↻</button>
+          <button type="button" class="complete-module-btn" id="btn-export-excel">
+            Descargar Reporte en Excel (.xlsx) 📊
+          </button>
+        </div>
+      </div>
+
+      <!-- Estadísticas Generales -->
+      <div class="admin-kpi-grid" id="admin-kpis"></div>
+
+      <!-- Buscador y Filtros -->
+      <div class="admin-toolbar">
+        <div class="admin-filters">
+          <input type="text" id="filter-search" placeholder="Buscar por nombre o cédula...">
+          <select id="filter-course">
+            <option value="">Todos los cursos</option>
+          </select>
+          <select id="filter-status">
+            <option value="">Todos los estados</option>
+            <option value="Finalizado">Cursos Finalizados (Aprobados)</option>
+            <option value="En progreso">En progreso</option>
+            <option value="Reprobado">Con intentos reprobados (&lt; 3.0)</option>
+          </select>
+        </div>
+        <span style="font-size:0.84rem;font-weight:700;color:var(--teal-dark);" id="admin-rows-count">0 registros</span>
+      </div>
+
+      <!-- Tabla Principal -->
+      <div class="lesson-table-wrap">
+        <table class="lesson-table admin-table">
+          <thead>
+            <tr>
+              <th>Cédula</th>
+              <th>Participante</th>
+              <th>Curso</th>
+              <th>Fecha Ingreso</th>
+              <th>Avance</th>
+              <th>Notas por Módulo (1.0 - 5.0)</th>
+              <th>Promedio</th>
+              <th>Estado</th>
+              <th>Certificado</th>
+              <th>Historial</th>
+            </tr>
+          </thead>
+          <tbody id="admin-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL PARA VER HISTORIAL DE INTENTOS -->
+  <div class="portal-modal" id="portal-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="portal-modal-backdrop" id="modal-backdrop"></div>
+    <div class="portal-modal-card" style="width:min(820px, 100%);">
+      <div class="portal-modal-top">
+        <h3 id="modal-title">Historial de Intentos</h3>
+        <button type="button" class="modal-close-btn" id="modal-close" aria-label="Cerrar ventana">✕</button>
+      </div>
+      <div class="portal-modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <div class="footer-brand">VATOHA <span>INGENIERÍA S.A.S.</span></div>
+        <span class="footer-nit">NIT 901.479.098-6 • Panel Administrativo de Capacitación</span>
+      </div>
+      <div>© <span id="year"></span> VATOHA Ingeniería S.A.S.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
