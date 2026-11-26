@@ -6,8 +6,8 @@ const PORTAL_CURSOS = [
     modalidad: 'e-learning',
     descripcion:
       'Fortalecer las habilidades de liderazgo mediante la motivación, la toma de decisiones responsables y la delegación efectiva, brindando herramientas para guiar y acompañar equipos de trabajo.',
-        video: {
-      titulo: 'Video introductorio del curso',
+    video: {
+      titulo: 'Video introductorio: Liderazgo y motivación',
       url: 'assets/modulo1.mp4'
     },
     modulos: [
@@ -17,10 +17,8 @@ const PORTAL_CURSOS = [
         titulo: 'Liderazgo y motivación',
         duracion: '2 horas',
         video: {
-          titulo: ' Liderazgo positivo en el trabajo',
+          titulo: 'Liderazgo positivo en el trabajo',
           url: 'assets/modulo1.1.mp4'
-          // Si prefieres usar un archivo guardado en tu carpeta assets/, escribe:
-          // url: 'assets/video-modulo1.mp4'
         },
         temas: [
           'Introducción y enfoque del liderazgo positivo',
@@ -34,7 +32,7 @@ const PORTAL_CURSOS = [
               'El liderazgo consiste en influir positivamente en los demás, brindándoles conocimientos, apoyo y soluciones para alcanzar sus objetivos. La motivación surge cuando el líder inspira a su equipo con su actitud, confianza, respeto y comunicación.',
             cita: '“Un buen líder impulsa el crecimiento de su equipo y promueve soluciones ante diferentes situaciones.”',
             video: {
-              titulo: 'Video introductorio: Liderazgo y motivación',
+              titulo: 'Enfoque del liderazgo positivo',
               url: 'assets/Modulo1.2.mp4'
             }
           },
@@ -50,7 +48,7 @@ const PORTAL_CURSOS = [
               'Motiva mediante el ejemplo y la comunicación.'
             ],
             video: {
-              titulo: 'Video introductorio: Liderazgo y motivación',
+              titulo: 'Características de un líder positivo',
               url: 'assets/modulo1.3.mp4'
             }
           },
@@ -93,7 +91,7 @@ const PORTAL_CURSOS = [
               ]
             },
             video: {
-              titulo: 'Video: Herramientas para motivar al equipo',
+              titulo: 'Herramientas para motivar al equipo',
               url: 'assets/modulo1.4.mp4'
             }
           }
@@ -161,9 +159,9 @@ const PORTAL_CURSOS = [
         titulo: 'Toma de decisiones responsables',
         duracion: '2 horas',
         video: {
-              titulo: 'Toma de decisiones responsables',
-              url: 'assets/modulo1.2.1.mp4'
-            },
+          titulo: 'Introducción: Toma de decisiones responsables',
+          url: 'assets/modulo1.2.1.mp4'
+        },
         temas: [
           'Importancia de decidir con responsabilidad',
           'Herramientas prácticas de análisis',
@@ -182,7 +180,7 @@ const PORTAL_CURSOS = [
               'Fortalece la responsabilidad y el compromiso laboral.'
             ],
             video: {
-              titulo: 'Toma de decisiones responsables',
+              titulo: 'Importancia de decidir con responsabilidad',
               url: 'assets/modulo1.2.2.mp4'
             }
           },
@@ -220,7 +218,7 @@ const PORTAL_CURSOS = [
               ]
             },
             video: {
-              titulo: 'Toma de decisiones responsables',
+              titulo: 'Herramientas prácticas para decidir',
               url: 'assets/modulo1.2.3.mp4'
             }
           },
@@ -234,12 +232,8 @@ const PORTAL_CURSOS = [
               'Evaluar las consecuencias de cada alternativa.',
               'Elegir la opción más adecuada.',
               'Comunicar la decisión y hacer seguimiento.'
-            ],
-            video: {
-              titulo: 'Video de apoyo: Toma de decisiones',
-              url: 'assets/modulo1.2.4.mp4'
-            }
-          },
+            ]
+          }
         ],
         actividad:
           'Piensa en una dificultad reciente de tu área y aplica los 6 pasos para estructurar una solución responsable y medible.',
@@ -303,10 +297,6 @@ const PORTAL_CURSOS = [
         numero: 'MÓDULO 3',
         titulo: 'Delegación y acompañamiento',
         duracion: '2 horas',
-        video: {
-              titulo: 'Delegación y acompañamiento',
-              url: 'assets/Modulo1.3.1.mp4'
-            },
         temas: [
           'Beneficios de delegar y acompañar',
           'Herramientas prácticas de delegación',
@@ -324,11 +314,7 @@ const PORTAL_CURSOS = [
               'Mejora el trabajo en equipo.',
               'Favorece el cumplimiento de las actividades.',
               'Promueve la autonomía y el crecimiento profesional.'
-            ],
-            video: {
-              titulo: 'Delegación y acompañamiento',
-              url: 'assets/modulo1.3.2.mp4'
-            },
+            ]
           },
           {
             titulo: 'Herramientas prácticas',
@@ -362,11 +348,7 @@ const PORTAL_CURSOS = [
                   'Realizar reuniones breves para revisar avances y apoyar ante posibles dificultades.'
                 ]
               ]
-            },
-            video: {
-              titulo: 'Delegación y acompañamiento',
-              url: 'assets/modulo1.3.3.mp4'
-            },
+            }
           },
           {
             titulo: '¿Cómo delegar correctamente?',
@@ -379,12 +361,8 @@ const PORTAL_CURSOS = [
               'Establecer tiempos y responsabilidades.',
               'Acompañar el proceso sin limitar la autonomía.',
               'Evaluar los resultados y brindar retroalimentación.'
-            ],
-            video: {
-              titulo: 'Delegación y acompañamiento',
-              url: 'assets/modulo1.3.4.mp4'
-            }
-          },
+            ]
+          }
         ],
         actividad:
           'Identifica una tarea operativa de tu rutina que puedas delegar y redacta el acuerdo claro (responsable, recursos, entregable y fecha de seguimiento).',
@@ -392,54 +370,22 @@ const PORTAL_CURSOS = [
           'Has finalizado el curso de Liderazgo y Motivación. Aprueba este quiz para habilitar tu certificado.',
         quiz: [
           {
-            pregunta: '1. ¿Qué es delegar funciones?',
+            pregunta: '1. ¿Bajo qué criterio se deben asignar las tareas al delegar?',
             opciones: [
-              'Evitar responsabilidades.',
-              'Asignar todas las tareas a una sola persona.',
-              'Realizar personalmente todas las actividades.',
-              'Asignar responsabilidades según las capacidades de cada trabajador.'
-            ],
-            correcta: 3
-          },
-          {
-            pregunta: '2. ¿Qué debe tener en cuenta un líder al delegar una actividad?',
-            opciones: [
-              'Las habilidades y capacidades del trabajador.',
-              'Únicamente la antigüedad.',
-              'Las preferencias personales del líder.',
-              'La cantidad de personas disponibles sin considerar sus funciones.'
-            ],
-            correcta: 0
-          },
-          {
-            pregunta: '3. ¿Qué significa acompañar a un trabajador?',
-            opciones: [
-              'Vigilarlo constantemente.',
-              'Hacer todas sus actividades.',
-              'Brindar orientación, apoyo y seguimiento.',
-              'Evitar que tome decisiones.'
-            ],
-            correcta: 2
-          },
-          {
-            pregunta: '4. ¿Cuál es un beneficio de delegar correctamente?',
-            opciones: [
-              'Aumentar los conflictos.',
-              'Desarrollar habilidades y fortalecer la autonomía.',
-              'Disminuir la comunicación.',
-              'Generar dependencia del líder.'
+              'Al azar entre las personas disponibles.',
+              'De acuerdo con las habilidades, conocimientos y capacidades de cada persona.',
+              'Únicamente a las personas con mayor antigüedad.'
             ],
             correcta: 1
           },
           {
-            pregunta: '5. ¿Qué debe hacer el líder al finalizar una actividad delegada?',
+            pregunta: '2. ¿Qué implica acompañar correctamente un proceso delegado?',
             opciones: [
-              'Ignorar los resultados.',
-              'Asignar otra tarea inmediatamente.',
-              'Evitar comentarios sobre el trabajo.',
-              'Evaluar los resultados y brindar retroalimentación.'
+              'Orientar, brindar apoyo y resolver inquietudes sin limitar la autonomía del trabajador.',
+              'Hacer el trabajo por el compañero si tiene alguna duda.',
+              'Desentenderse por completo hasta el día de la entrega final.'
             ],
-            correcta: 3
+            correcta: 0
           }
         ]
       }
@@ -453,20 +399,12 @@ const PORTAL_CURSOS = [
     modalidad: 'e-learning',
     descripcion:
       'Fortalecer la inteligencia emocional mediante el reconocimiento y comprensión de las emociones, el manejo del estrés y la frustración, y el desarrollo de la autorregulación emocional en el entorno laboral.',
-      video: {
-              titulo: 'Inteligencia Emocional',
-              url: 'assets/modulo2.mp4'
-            },
     modulos: [
       {
         id: 'ie-m1',
         numero: 'MÓDULO 1',
         titulo: 'Reconocimiento de emociones',
         duracion: '2 horas',
-              video: {
-              titulo: 'Inteligencia Emocional',
-              url: 'assets/modulo2.1.1.mp4'
-            },
         temas: [
           'Componentes de la inteligencia emocional',
           '¿Qué son las emociones y cuáles son los tipos principales?',
@@ -483,11 +421,7 @@ const PORTAL_CURSOS = [
               'Motivación: orientar la energía emocional hacia metas, perseverancia y adaptación.',
               'Empatía: percibir y comprender las emociones, perspectivas y necesidades de otras personas.',
               'Habilidades sociales: comunicarse con claridad, resolver conflictos y construir relaciones efectivas.'
-            ],
-              video: {
-              titulo: 'Inteligencia Emocional',
-              url: 'assets/modulo2.1.2.mp4'
-            },
+            ]
           },
           {
             titulo: 'Tipos principales de emociones',
@@ -500,11 +434,7 @@ const PORTAL_CURSOS = [
               'Miedo: nos alerta ante posibles peligros o situaciones desconocidas.',
               'Sorpresa: aparece ante acontecimientos inesperados.',
               'Asco: reacción de rechazo frente a algo desagradable.'
-            ],
-            video: {
-              titulo: 'Inteligencia Emocional',
-              url: 'assets/modulo2.1.3.mp4'
-            },
+            ]
           },
           {
             titulo: '¿Cómo reconocer nuestras emociones en el trabajo?',
@@ -516,11 +446,7 @@ const PORTAL_CURSOS = [
               'Observa tus reacciones: presta atención a tus pensamientos y sensaciones físicas.',
               'Acepta tus emociones: comprende que son naturales y cumplen una función.',
               'Expresa lo que sientes: comunica tus emociones de manera adecuada y respetuosa.'
-            ],
-            video: {
-              titulo: 'Inteligencia Emocional',
-              url: 'assets/modulo2.1.4.mp4'
-            },
+            ]
           }
         ],
         actividad:
@@ -529,54 +455,22 @@ const PORTAL_CURSOS = [
           'Reconocer lo que sientes es el primer paso para responder con consciencia en lugar de reaccionar por impulso.',
         quiz: [
           {
-            pregunta: '1. ¿Qué es la inteligencia emocional?',
+            pregunta: '1. ¿Por qué las emociones no se consideran "buenas" ni "malas"?',
             opciones: [
-              'Evitar expresar sentimientos.',
-              'Reconocer, comprender y gestionar nuestras emociones y las de los demás.',
-              'Controlar las emociones de los compañeros.',
-              'Ignorar las situaciones difíciles.'
+              'Porque no tienen ningún efecto en nuestras decisiones.',
+              'Porque son reacciones naturales y temporales que cumplen una función adaptativa.',
+              'Porque solo aparecen fuera del entorno laboral.'
             ],
             correcta: 1
           },
           {
-            pregunta: '2. ¿Cuál de las siguientes es una emoción básica?',
+            pregunta: '2. ¿Cuáles son los tres elementos que componen una emoción?',
             opciones: [
-              'Responsabilidad.',
-              'Disciplina.',
-              'Empatía.',
-              'Alegría.'
-            ],
-            correcta: 3
-          },
-          {
-            pregunta: '3. ¿Qué significa reconocer nuestras emociones?',
-            opciones: [
-              'Identificar lo que sentimos y comprender su origen.',
-              'Ocultar nuestros sentimientos.',
-              'Evitar hablar con los demás.',
-              'Reaccionar sin pensar.'
+              'Respuesta física en el cuerpo, pensamiento/interpretación e impulso a la acción.',
+              'Enojo, tristeza y alegría únicamente.',
+              'Silencio, distancia y olvido.'
             ],
             correcta: 0
-          },
-          {
-            pregunta: '4. ¿Cómo podemos demostrar empatía en el trabajo?',
-            opciones: [
-              'Criticando las emociones de los demás.',
-              'Ignorando las preocupaciones.',
-              'Escuchando y comprendiendo las necesidades de los compañeros.',
-              'Imponiendo nuestras opiniones.'
-            ],
-            correcta: 2
-          },
-          {
-            pregunta: '5. ¿Por qué es importante reconocer las emociones?',
-            opciones: [
-              'Para evitar relacionarnos con otras personas.',
-              'Para mejorar el autocontrol y las relaciones laborales.',
-              'Para eliminar todas las emociones.',
-              'Para evitar asumir responsabilidades.'
-            ],
-            correcta: 1
           }
         ]
       },
@@ -585,10 +479,6 @@ const PORTAL_CURSOS = [
         numero: 'MÓDULO 2',
         titulo: 'Manejo del estrés y frustración',
         duracion: '2 horas',
-        video: {
-              titulo: 'Menejo Del Estrés y Frustración',
-              url: 'assets/modulo2.2.1.mp4'
-            },
         temas: [
           'Diferencia entre estrés y frustración',
           'Herramientas para manejarlos en el ámbito laboral',
@@ -630,11 +520,18 @@ const PORTAL_CURSOS = [
                 ['Resolución de problemas', 'Analizar las dificultades y buscar alternativas para superar los obstáculos.'],
                 ['Apoyo del equipo', 'Compartir las preocupaciones y solicitar ayuda cuando sea necesario.']
               ]
-            },
-            video: {
-              titulo: 'Menejo Del Estrés y Frustración',
-              url: 'assets/modulo2.2.3.mp4'
-            },
+            }
+          },
+          {
+            titulo: 'Recomendaciones para el entorno laboral',
+            texto: 'Hábitos clave para proteger tu equilibrio diario:',
+            lista: [
+              'Evitar reaccionar impulsivamente ante situaciones difíciles.',
+              'Reconocer los propios límites y aprender a establecer prioridades.',
+              'Mantener una comunicación respetuosa con los compañeros.',
+              'Comprender que los errores hacen parte del aprendizaje.',
+              'Dedicar tiempo al descanso y al bienestar personal.'
+            ]
           }
         ],
         actividad:
@@ -713,11 +610,7 @@ const PORTAL_CURSOS = [
               'Control de pensamientos: evitar que las ideas negativas dominen y cambiar el enfoque. Ejemplo: ver una crítica laboral como una oportunidad de mejora.',
               'Reconsideración emocional: reinterpretar una situación desde una perspectiva constructiva. Ejemplo: asumir una tarea fallida como aprendizaje para la próxima vez.',
               'Distanciamiento emocional: tomar unos minutos de distancia antes de responder cuando algo nos altera, evitando que el conflicto escale.'
-            ],
-            video: {
-              titulo: 'Menejo Del Estrés y Frustración',
-              url: 'assets/modulo2.3.2.mp4'
-            },
+            ]
           },
           {
             titulo: 'Pasos para manejar las emociones en el ámbito laboral',
@@ -731,12 +624,7 @@ const PORTAL_CURSOS = [
               'Buscar soluciones enfocadas en resolver la dificultad.',
               'Aprender de cada experiencia e identificar oportunidades de mejora.'
             ],
-            cita: '“Autorregularse no es esconder emociones, sino responder de manera consciente, equilibrada y respetuosa.”',
-
-            video: {
-              titulo: 'Menejo Del Estrés y Frustración',
-              url: 'assets/modulo2.3.3.mp4'
-            },
+            cita: '“Autorregularse no es esconder emociones, sino responder de manera consciente, equilibrada y respetuosa.”'
           }
         ],
         actividad:
@@ -800,6 +688,14 @@ const PORTAL_CURSOS = [
                 ['Por comunicación', 'Información incompleta o mal interpretada.']
               ]
             }
+          },
+          {
+            titulo: 'Principales causas y señales de alerta',
+            texto: 'Detectar estas señales a tiempo evita que el problema crezca y afecte el clima:',
+            lista: [
+              'Causas frecuentes: falta de comunicación, funciones poco claras, distribución desigual de tareas, presión laboral e incumplimiento de compromisos.',
+              'Señales visibles: discusiones frecuentes, falta de colaboración, comentarios negativos, dificultad para compartir información y tensión laboral.'
+            ]
           },
           {
             titulo: '¿Cómo identificar un conflicto?',
@@ -942,10 +838,24 @@ const PORTAL_CURSOS = [
               'Establecer compromisos claros y verificar su cumplimiento.'
             ],
             cita: '“Importante: Los casos de acoso, violencia, amenazas o discriminación deben comunicarse a los canales formales de la empresa y recibir atención especializada; no deben tratarse como simples desacuerdos.”'
+          },
+          {
+            titulo: '¿Cómo prevenir nuevos conflictos?',
+            texto: 'Acciones preventivas permanentes en VATOHA Ingeniería S.A.S.:',
+            tabla: {
+              columnas: ['Acción preventiva', 'Beneficio directo'],
+              filas: [
+                ['Definir las funciones', 'Evita confusiones y duplicidad de tareas.'],
+                ['Realizar reuniones periódicas', 'Permite identificar dificultades a tiempo.'],
+                ['Mejorar la comunicación', 'Evita malos entendidos operativos.'],
+                ['Promover el respeto y reconocer aportes', 'Fortalece las relaciones y la motivación.'],
+                ['Establecer canales de atención y capacitar', 'Facilita expresar inconformidades y fortalece habilidades.']
+              ]
+            }
           }
         ],
         actividad:
-          'Define dos acciones preventivas que implementarás en tu grupo de trabajo durante el próximo mes.',
+          'Define dos acciones preventivas de la tabla que implementarás en tu grupo de trabajo durante el próximo mes.',
         conclusion:
           'Has finalizado el curso de Resolución de Conflictos. Aprueba este quiz para obtener tu certificado.',
         quiz: [
