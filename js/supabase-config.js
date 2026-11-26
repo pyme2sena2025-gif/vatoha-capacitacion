@@ -3,8 +3,8 @@
 // Reemplaza los dos valores con los de tu proyecto en:
 // Supabase -> Project Settings -> API
 // ============================================================================
-const VATOHA_SUPABASE_URL = 'PEGA_AQUI_TU_SUPABASE_URL';
-const VATOHA_SUPABASE_ANON_KEY = 'PEGA_AQUI_TU_SUPABASE_ANON_KEY';
+const VATOHA_SUPABASE_URL = 'https://eoauxlscpocdfoybiyne.supabase.co/rest/v1/';
+const VATOHA_SUPABASE_ANON_KEY = 'sb_publishable_Z7nb_BBd3_TjfYchBLX9wQ_otSnSH5I';
 
 function isSupabaseConfigured() {
   return (
