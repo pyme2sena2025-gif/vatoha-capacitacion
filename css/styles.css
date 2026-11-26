@@ -513,8 +513,8 @@ a {
 
 .four-cards-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
 .benefit-tile {
@@ -523,6 +523,9 @@ a {
   border-radius: 18px;
   padding: 24px 18px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tile-icon {
@@ -547,6 +550,15 @@ a {
   margin: 0;
   font-size: 0.88rem;
   color: var(--muted);
+}
+
+.benefit-tile img {
+  width: 100%;
+  max-width: 280px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 16px;
 }
 
 .home-cta-strip {
@@ -601,7 +613,7 @@ a {
 }
 
 /* =========================================================
-   4. VIDEOS (Monitor Inicio, Introducción y Justificación)
+   4. VIDEOS DE INICIO (Monitor, Introducción, Justificación, Objetivo y Alcance)
    ========================================================= */
 .lesson-video-wrapper {
   position: relative;
@@ -626,6 +638,7 @@ a {
   border: 0;
 }
 
+/* Video dentro del monitor Hero (inicio1.mp4) */
 .screen-content .lesson-video-wrapper {
   margin-top: 0;
   margin-bottom: 14px;
@@ -636,36 +649,43 @@ a {
   max-height: 240px;
 }
 
-.intro-grid .intro-video-slot {
+/* Videos en Introducción (inicio2.mp4) y Objetivo (inicio4.mp4) */
+.intro-grid .intro-video-slot,
+.objective-grid .objective-video-slot {
   grid-column: 1 / -1;
   width: 100%;
   max-width: 780px;
-  margin: 12px auto 0;
+  margin: 14px auto 0;
 }
 
-.intro-grid .lesson-video-wrapper {
+.intro-grid .lesson-video-wrapper,
+.objective-grid .lesson-video-wrapper {
   border-radius: 16px;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
 }
 
-.intro-grid .lesson-video-wrapper video {
+.intro-grid .lesson-video-wrapper video,
+.objective-grid .lesson-video-wrapper video {
   max-height: 440px;
 }
 
-.justification-video-slot {
-  grid-column: 1 / -1;
+/* Videos en Justificación (inicio3.mp4) y Alcance (inicio5.mp4) */
+.justification-video-slot,
+.alcance-video-slot {
   width: 100%;
   max-width: 780px;
-  margin: 22px auto 0;
+  margin: 28px auto 0;
 }
 
-.justification-video-slot .lesson-video-wrapper {
+.justification-video-slot .lesson-video-wrapper,
+.alcance-video-slot .lesson-video-wrapper {
   border-radius: 16px;
   border: 1px solid var(--line);
   box-shadow: 0 12px 28px rgba(15, 92, 92, 0.12);
 }
 
-.justification-video-slot .lesson-video-wrapper video {
+.justification-video-slot .lesson-video-wrapper video,
+.alcance-video-slot .lesson-video-wrapper video {
   max-height: 440px;
 }
 
@@ -715,18 +735,30 @@ footer {
   .objective-grid {
     grid-template-columns: 1fr;
   }
+
   .four-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 640px) {
+  .nav-wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 0;
+  }
+
   .three-pillars,
   .four-cards-grid {
     grid-template-columns: 1fr;
   }
+
   .pill-btn {
     padding: 8px 14px;
     font-size: 0.84rem;
+  }
+
+  .home-cta-strip {
+    padding: 24px 20px;
   }
 }
