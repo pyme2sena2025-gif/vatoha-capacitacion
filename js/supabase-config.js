@@ -2,7 +2,7 @@
 // CONFIGURACIÓN DE SUPABASE - VATOHA INGENIERÍA S.A.S.
 // Obtén ambos valores en: Supabase -> Project Settings -> API
 // ============================================================================
-const RAW_SUPABASE_URL = 'https://eoauxlscpocdfoybiyne.supabase.co/rest/v1/';
+const RAW_SUPABASE_URL = 'https://eoauxlscpocdfoybiyne.supabase.co';
 const RAW_SUPABASE_ANON_KEY = 'sb_publishable_Z7nb_BBd3_TjfYchBLX9wQ_otSnSH5I';
 
 const VATOHA_SUPABASE_URL = RAW_SUPABASE_URL.trim().replace(/\/+$/, '');
