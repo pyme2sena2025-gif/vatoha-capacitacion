@@ -105,27 +105,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Cargar toda la información desde Supabase
   async function loadAdminData() {
-    const tbody = document.getElementById('admin-table-body');
-    tbody.innerHTML = '<tr><td colspan="10" style="text-align:center;padding:24px;">Cargando registros desde Supabase...</td></tr>';
+  const tbody = document.getElementById('admin-table-body');
+  tbody.innerHTML = '<tr><td colspan="10" style="text-align:center;padding:24px;">Cargando registros desde Supabase...</td></tr>';
 
-    const [resPart, resInsc, resProg, resInt, resCert] = await Promise.all([
-      supabaseClient.from('participantes').select('*').order('ultimo_acceso', { ascending: false }),
-      supabaseClient.from('inscripciones').select('*').order('fecha_ingreso', { ascending: false }),
-      supabaseClient.from('progreso_modulos').select('*').order('orden_modulo', { ascending: true }),
-      supabaseClient.from('intentos_quiz').select('*').order('fecha_presentacion', { ascending: false }),
-      supabaseClient.from('certificados').select('*')
-    ]);
+  const [resPart, resInsc, resProg, resInt, resCert] = await Promise.all([
+    supabaseClient.from('participantes').select('*').order('ultimo_acceso', { ascending: false }),
+    supabaseClient.from('inscripciones').select('*').order('fecha_ingreso', { ascending: false }),
+    supabaseClient.from('progreso_modulos').select('*').order('orden_modulo', { ascending: true }),
+    supabaseClient.from('intentos_quiz').select('*').order('fecha_presentacion', { ascending: false }),
+    supabaseClient.from('certificados').select('*')
+  ]);
 
-    allParticipantes = resPart.data || [];
-    allInscripciones = resInsc.data || [];
-    allProgreso = resProg.data || [];
-    allIntentos = resInt.data || [];
-    allCertificados = resCert.data || [];
-
-    renderKpis();
-    applyFilters();
+  const firstError = resPart.error || resInsc.error || resProg.error || resInt.error || resCert.error;
+  if (firstError) {
+    tbody.innerHTML = `<tr><td colspan="10" style="text-align:center;padding:24px;color:#b42318;font-weight:700;">❌ Error cargando datos de Supabase: ${firstError.message}</td></tr>`;
+    return;
   }
 
+  allParticipantes = resPart.data || [];
+  allInscripciones = resInsc.data || [];
+  allProgreso = resProg.data || [];
+  allIntentos = resInt.data || [];
+  allCertificados = resCert.data || [];
+
+  renderKpis();
+  applyFilters();
+}
   function renderKpis() {
     const kpiContainer = document.getElementById('admin-kpis');
     const totalPart = allParticipantes.length;
