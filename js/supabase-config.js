@@ -1,19 +1,29 @@
 // ============================================================================
 // CONFIGURACIÓN DE SUPABASE - VATOHA INGENIERÍA S.A.S.
-// Reemplaza los dos valores con los de tu proyecto en:
-// Supabase -> Project Settings -> API
+// Obtén ambos valores en: Supabase -> Project Settings -> API
 // ============================================================================
-const VATOHA_SUPABASE_URL = 'https://eoauxlscpocdfoybiyne.supabase.co/rest/v1/';
-const VATOHA_SUPABASE_ANON_KEY = 'sb_publishable_Z7nb_BBd3_TjfYchBLX9wQ_otSnSH5I';
+const RAW_SUPABASE_URL = 'https://TU_ID_DE_PROYECTO.supabase.co';
+const RAW_SUPABASE_ANON_KEY = 'PEGA_AQUI_TU_ANON_PUBLIC_KEY';
+
+const VATOHA_SUPABASE_URL = RAW_SUPABASE_URL.trim().replace(/\/+$/, '');
+const VATOHA_SUPABASE_ANON_KEY = RAW_SUPABASE_ANON_KEY.trim();
 
 function isSupabaseConfigured() {
-  return (
-    VATOHA_SUPABASE_URL &&
-    VATOHA_SUPABASE_ANON_KEY &&
-    !VATOHA_SUPABASE_URL.includes('PEGA_AQUI') &&
-    !VATOHA_SUPABASE_ANON_KEY.includes('PEGA_AQUI') &&
-    typeof window.supabase !== 'undefined'
-  );
+  try {
+    const parsed = new URL(VATOHA_SUPABASE_URL);
+    const isRootPath = parsed.pathname === '' || parsed.pathname === '/';
+    return (
+      parsed.protocol === 'https:' &&
+      isRootPath &&
+      !VATOHA_SUPABASE_URL.includes('supabase.com/dashboard') &&
+      !VATOHA_SUPABASE_URL.includes('TU_ID_DE_PROYECTO') &&
+      VATOHA_SUPABASE_ANON_KEY.length > 20 &&
+      !VATOHA_SUPABASE_ANON_KEY.includes('PEGA_AQUI') &&
+      typeof window.supabase !== 'undefined'
+    );
+  } catch (e) {
+    return false;
+  }
 }
 
 const supabaseClient = isSupabaseConfigured()
